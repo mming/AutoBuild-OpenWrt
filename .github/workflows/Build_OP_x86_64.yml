@@ -19,11 +19,12 @@ on:
   #  - cron: 0 8 * * 5
   
   #watch:
-  #  types: [started]
+    types: [started]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
     - name: Checkout
